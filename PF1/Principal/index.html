@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="principal.css">
+    <link rel="icon" href="../Assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="icon-container">
+            <img src="../Assets/icon.svg" alt="Ícone" class="header-icon">
+        </div>
+        <h1>Produtos Disponíveis - IFRJ</h1>
+        <nav>
+            <a href="/PF1/Cadastro/cadastro.php">Cadastro</a>
+            <a href="/PF1/Login/login.php">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products-section">
+            <h2>Lista de Produtos</h2>
+            <div id="products-list">
+                <div class="product">
+                    <a href="../Produtos/camisa-oficial.html">
+                        <img src="https://via.placeholder.com/150" alt="Camisa Oficial">
+                        <h3>Camisa Oficial</h3>
+                    </a>
+                    <p>Camisa oficial do IFRJ com logo bordado.</p>
+                    <div class="price">R$ 80,00</div>
+                </div>
+                <div class="product">
+                    <a href="../Produtos/calca-oficial.html">
+                        <img src="https://via.placeholder.com/150" alt="Calça Oficial">
+                        <h3>Calça Oficial</h3>
+                    </a>
+                    <p>Calça oficial do IFRJ com tecido confortável.</p>
+                    <div class="price">R$ 120,00</div>
+                </div>
+                <div class="product">
+                    <a href="../Produtos/jaqueta-oficial.html">
+                        <img src="https://via.placeholder.com/150" alt="Jaqueta Oficial">
+                        <h3>Jaqueta Oficial</h3>
+                    </a>
+                    <p>Jaqueta oficial do IFRJ para dias frios.</p>
+                    <div class="price">R$ 150,00</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Uniforme Express - IFRJ</p>
+    </footer>
+
+    <style>
+        /* Estilização do ícone no cabeçalho */
+        .icon-container {
+            text-align: center; /* Centraliza o conteúdo */
+            margin-bottom: 10px; /* Espaço abaixo do ícone */
+        }
+        .header-icon {
+            max-width: 50px; /* Ajuste o tamanho do ícone */
+            height: auto; /* Mantém a proporção */
+        }
+    </style>
+</body>
+</html>

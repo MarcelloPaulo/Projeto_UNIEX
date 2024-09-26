@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Uniforme - IFRJ</title>
+    <link rel="stylesheet" href="../principal.css">
+</head>
+<body>
+    <header>
+        <h1>Comprar Uniforme - IFRJ</h1>
+        <nav>
+            <a href="/Principal/index.html">Página Principal</a>
+            <a href="/Cadastro/cadastro.html">Cadastro</a>
+            <a href="/Login/login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="purchase-detail">
+            <h2>Detalhes do Produto</h2>
+            <div class="product-summary">
+                <img id="product-image" src="https://via.placeholder.com/300" alt="Produto IFRJ">
+                <div>
+                    <h3 id="product-name">Produto</h3>
+                    <p id="product-description">Descrição do produto.</p>
+                    <div class="price" id="product-price">Preço: R$ 0,00</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="purchase-options">
+            <h2>Opções de Compra</h2>
+            <form>
+                <label for="size">Selecione o Tamanho:</label>
+                <select id="size" name="size" required>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+
+                <label for="quantity">Quantidade:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+                <label for="payment">Método de Pagamento:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Cartão de Crédito</option>
+                    <option value="boleto">Boleto Bancário</option>
+                    <option value="pix">PIX</option>
+                </select>
+
+                <button type="submit" class="buy-button">Finalizar Compra</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Uniforme Express - IFRJ</p>
+    </footer>
+
+    <script>
+        class Product {
+            constructor(id, name, description, price, image) {
+                this.id = id;
+                this.name = name;
+                this.description = description;
+                this.price = price;
+                this.image = image;
+            }
+
+            static loadFromLocalStorage() {
+                const productData = JSON.parse(localStorage.getItem('selectedProduct'));
+                if (productData) {
+                    return new Product(
+                        productData.id,
+                        productData.name,
+                        productData.description,
+                        productData.price,
+                        productData.image
+                    );
+                }
+                return null;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const product = Product.loadFromLocalStorage();
+
+            if (product) {
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('product-price').textContent = `Preço: ${product.price}`;
+                document.getElementById('product-image').src = product.image;
+                document.getElementById('product-image').alt = product.name;
+            } else {
+                console.error('Produto não encontrado ou não selecionado.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+<style>
+ /* Reset básico e configuração de fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seções */
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007d34; /* Verde escuro */
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid #e14d43; /* Vermelho */
+    padding-bottom: 10px;
+}
+
+/* Detalhes do produto */
+.product-summary {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.product-summary img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-summary div {
+    flex: 1;
+}
+
+.product-summary .price {
+    font-size: 20px;
+    color: #e14d43; /* Vermelho */
+    margin-top: 10px;
+}
+
+/* Opções de compra */
+.purchase-options form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.purchase-options label {
+    font-weight: bold;
+    color: #333;
+}
+
+.purchase-options input, 
+.purchase-options select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.purchase-options button {
+    padding: 10px 20px;
+    background-color: #e14d43; /* Vermelho */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.purchase-options button:hover {
+    background-color: #c32f27; /* Vermelho escuro */
+}
+
+/* Estilização do rodapé */
+footer {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+</style>
+</html>

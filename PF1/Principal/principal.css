@@ -1,0 +1,136 @@
+/* Reset básico e configuração de fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+#products-list .product a {
+    text-decoration: none; /* Remove o sublinhado dos links dentro da lista de produtos */
+}
+
+
+#products-list a:hover {
+    text-decoration: underline; /* Substitui no hover, se necessário */
+}
+
+/* Estilização principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seção de produtos */
+#products-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h2 {
+    color: #007d34; /* Verde escuro */
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid #e14d43; /* Vermelho */
+    padding-bottom: 10px;
+}
+
+/* Lista de produtos */
+#products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    color: #007d34; /* Verde escuro */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product .price {
+    font-size: 20px;
+    color: #e14d43; /* Vermelho */
+}
+
+/* Estilização do rodapé */
+footer {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilização do ícone no cabeçalho */
+.icon-container {
+    text-align: center; /* Centraliza o conteúdo */
+    margin-bottom: 10px; /* Espaço abaixo do ícone */
+}
+.header-icon {
+    max-width: 50px; /* Ajuste o tamanho do ícone */
+    height: auto; /* Mantém a proporção */
+}

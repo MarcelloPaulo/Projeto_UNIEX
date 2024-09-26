@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisa Oficial - IFRJ</title>
+    <link rel="stylesheet" href="../Principal/principal.css">
+    <link rel="icon" href="../Assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <h1>Camisa Oficial - IFRJ</h1>
+        <nav>
+            <a href="../Principal/index.html">Voltar para a Página Principal</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-detail">
+            <img src="https://via.placeholder.com/300" alt="Camisa Oficial">
+            <h2>Camisa Oficial</h2>
+            <p>Camisa oficial do IFRJ com logo bordado. Disponível nos tamanhos P, M, G e GG.</p>
+            <div class="price">R$ 80,00</div>
+            <button class="buy-button" data-product-id="camisa-oficial">Comprar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Uniforme Express - IFRJ</p>
+    </footer>
+
+    <script>
+        class Product {
+            constructor(id, name, description, price, image) {
+                this.id = id;
+                this.name = name;
+                this.description = description;
+                this.price = price;
+                this.image = image;
+            }
+
+            storeInLocalStorage() {
+                localStorage.setItem('selectedProduct', JSON.stringify(this));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.buy-button');
+            button.addEventListener('click', () => {
+                const product = new Product(
+                    'camisa-oficial',
+                    'Camisa Oficial',
+                    'Camisa oficial do IFRJ com logo bordado. Disponível nos tamanhos P, M, G e GG.',
+                    'R$ 80,00',
+                    'https://via.placeholder.com/300'
+                );
+                product.storeInLocalStorage();
+                window.location.href = '../Compras/Comprar.html';
+            });
+        });
+    </script>
+</body>
+</html>
+
+</html>
+
+<style>
+    /* Reset básico e configuração de fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Detalhes do produto */
+.product-detail {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-detail img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.product-detail h2 {
+    color: #007d34; /* Verde escuro */
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid #e14d43; /* Vermelho */
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.product-detail p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.product-detail .price {
+    font-size: 24px;
+    color: #e14d43; /* Vermelho */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Botão Comprar */
+.buy-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #005b27; /* Verde mais escuro */
+}
+
+/* Estilização do rodapé */
+footer {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+</style>
+</html>

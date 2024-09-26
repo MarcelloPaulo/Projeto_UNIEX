@@ -1,0 +1,132 @@
+/* Reset básico e configuração de fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Estilização principal */
+main {
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 80px; /* Espaço suficiente para o cabeçalho fixo */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007d34; /* Verde escuro */
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid #e14d43; /* Vermelho */
+    padding-bottom: 10px;
+}
+
+/* Estilização do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilização dos botões */
+input[type="submit"] {
+    background-color: #007d34; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #005d26; /* Verde escuro */
+}
+
+input[type="reset"] {
+    background-color: #e14d43; /* Vermelho */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="reset"]:hover {
+    background-color: #c32f27; /* Vermelho escuro */
+}
+
+/* Estilização das mensagens */
+.success-message {
+    margin-top: 15px;
+    color: #007d34; /* Verde escuro */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-message {
+    margin-top: 15px;
+    color: red; /* Vermelho */
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Estilização do rodapé */
+footer {
+    background-color: #007d34; /* Verde escuro */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
