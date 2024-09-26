@@ -1,0 +1,12 @@
+Contribuições dos programadores:
+
+Marcello Paulo: Frontend
+html: pagina principal, formulários de cadastro e login, página de compra, desenvolvimento das assets.
+css: estilização padronizada conforme a paleta de cores da Instituição, organização das div's para representar os produtos, formatação e organização da página, assim como a revisão dos conteúdos da página.
+
+Rafael Monnerat: Backend 
+SQL: criação do banco de dados alunos com a tabela alunos e os atributos padronizados conforme o formulário apresentado na página de cadastro.
+PHP: comunicação do formulário com o banco de dados alunos de forma a o manipular:
+cadastro: responsável pela inserção de novos elementos ao banco de dados alunos com os dados preenchidos do formulário em html.
+login: responsável pela pesquisa dos elementos no banco de dados alunos, assim como a validação do login e os dados inseridos para a execução correta.
+
